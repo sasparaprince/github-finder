@@ -1,8 +1,12 @@
-const Home = () => {
+import UserResults from "../components/users/UserResults";
+
+function Home() {
   return (
-    <div>
-    </div>
-  )
+    <>
+{/* serch component  */}
+      <UserResults />
+    </>
+  );
 }
 
-export default Home
+export default Home;
