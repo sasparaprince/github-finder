@@ -3,7 +3,7 @@ import githubReducer from "./GithubReducer";
 
 const GithubContext = createContext();
 
-// const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
+const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
 // const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
 export const GithubProvider = ({ children }) => {
@@ -23,7 +23,7 @@ export const GithubProvider = ({ children }) => {
       q: text,
     });
     const response = await fetch(
-      `https://api.github.com/search/users?${params}`,
+      `${GITHUB_URL}/search/users?${params}`,
       {
         headers: {
           // Authorization: `token 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`,
@@ -42,7 +42,7 @@ export const GithubProvider = ({ children }) => {
   const getUser = async (login) => {
     setLoading();
 
-    const response = await fetch(`https://api.github.com/users/${login}`, {
+    const response = await fetch(`${GITHUB_URL}/users/${login}`, {
       headers: {
         // Authorization: `token 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`,
       },
@@ -69,7 +69,7 @@ export const GithubProvider = ({ children }) => {
     });
   
     const response = await fetch(
-      `https://api.github.com/users/${login}/repos?${params}`,
+      `${GITHUB_URL}/users/${login}/repos?${params}`,
       {
         headers: {
           // Authorization: `token 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`,
