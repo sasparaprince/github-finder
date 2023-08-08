@@ -12,7 +12,7 @@ import User from "./pages/User";
 function App() {
   return (
     <GithubProvider>
-      <AlertProvider>xw
+      <AlertProvider>
         <Router>
           <div className="flex flex-col justify-between h-screen">
             <Navbar />
